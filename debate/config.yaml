@@ -1,0 +1,43 @@
+datasets:
+  - path: "./human_label.json"
+    name: "debate_with_images_sample"  # 可选：自定义数据集名称，如果不指定会从文件名自动提取
+output_dir: "./results/debate_with_images"
+round: 2
+debaters:
+  - role: "D_aff"
+    config:
+      model: "gpt-4o"
+      backend: "api"
+      api_key: "sk-xxx"
+      use_cache: true
+      cache_dir: "./cache"
+      num_workers: 50
+      infer_cfgs:
+        temperature: 0.0
+        top_p: 1.0
+        max_tokens: 512
+  - role: "D_neg"
+    config:
+      model: "gpt-4o"
+      backend: "api"
+      api_key: "sk-xxx"
+      use_cache: true
+      cache_dir: "./cache"
+      num_workers: 50
+      infer_cfgs:
+          temperature: 0.0
+          top_p: 1.0
+          max_tokens: 512
+judge:
+  role: "D_judge"
+  config:
+    model: "gpt-4o"
+    backend: "api"
+    infer_cfgs:
+        temperature: 0.0
+        top_p: 1.0
+        max_tokens: 512
+    num_workers: 50
+    cache_dir: "./cache"
+    use_cache: True
+    api_key: "sk-xxx"

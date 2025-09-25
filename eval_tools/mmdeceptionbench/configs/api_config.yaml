@@ -1,0 +1,21 @@
+# Example API configuration file
+# This file defines the engine type, model name, and inference parameters for API-based inference
+
+engine: "api"
+model_name: "gpt-4o"
+use_cache: true
+
+api_key: "sk-xxx"
+
+infer_cfgs:
+  # Sampling parameters
+  temperature: 0.0
+  max_tokens: 512
+  #top_p: 0.9
+  #top_k: 50
+  #frequency_penalty: 0.0
+  #presence_penalty: 0.0
+
+# Note: model_cfgs is not used for API engine
+model_cfgs:
+  model: "gpt-4o"
